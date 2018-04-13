@@ -1,0 +1,66 @@
+﻿@model ContainerManagementSystem.Models.agn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2><b>Agent</b></h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.agentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agentAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agentAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agentDOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agentDOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agentPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agentPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agentEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agentEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usr.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usr.userName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.agentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

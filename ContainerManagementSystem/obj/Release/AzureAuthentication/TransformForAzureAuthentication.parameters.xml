@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AD_ClientID" description="AD Client Application ID" defaultValue="3e7f37f7-db19-4610-89a9-001c9e265d6d" tags="AD_ClientAPPID">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Patrick\\Desktop\\ContainerManagementSystem\\ContainerManagementSystem\\ContainerManagementSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='ida:ClientId']/@value" />
+  </parameter>
+  <parameter name="AD_TenantId" description="AD Tenant Id" defaultValue="0472d8e5-21b3-4da5-8e14-14aa3bcf87d8" tags="AD_TenantId">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Patrick\\Desktop\\ContainerManagementSystem\\ContainerManagementSystem\\ContainerManagementSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='ida:TenantId']/@value" />
+  </parameter>
+  <parameter name="AD_Domain" description="AD Domain" defaultValue="patrickhou00hotmail.onmicrosoft.com" tags="AD_Domain">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Patrick\\Desktop\\ContainerManagementSystem\\ContainerManagementSystem\\ContainerManagementSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='ida:Domain']/@value" />
+  </parameter>
+  <parameter name="AD_PostLogoutRedirectUri" description="AD PostLogoutRedirectUri" defaultValue="https://localhost:44390/" tags="AD_PostLogoutRedirectUri">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Patrick\\Desktop\\ContainerManagementSystem\\ContainerManagementSystem\\ContainerManagementSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/appSettings/add[@key='ida:PostLogoutRedirectUri']/@value" />
+  </parameter>
+</parameters>

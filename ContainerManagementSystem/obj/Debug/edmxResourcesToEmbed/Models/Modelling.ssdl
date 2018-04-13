@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="agn">
+    <Key>
+      <PropertyRef Name="agentId" />
+    </Key>
+    <Property Name="agentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agentName" Type="varchar" MaxLength="100" />
+    <Property Name="agentAge" Type="int" />
+    <Property Name="agentDOB" Type="datetime" />
+    <Property Name="agentPhone" Type="varchar" MaxLength="20" />
+    <Property Name="agentEmail" Type="varchar" MaxLength="50" />
+    <Property Name="userId" Type="int" />
+  </EntityType>
+  <EntityType Name="bkg">
+    <Key>
+      <PropertyRef Name="bookingId" />
+    </Key>
+    <Property Name="bookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="custId" Type="int" />
+    <Property Name="shipId" Type="int" />
+    <Property Name="agnId" Type="int" />
+  </EntityType>
+  <EntityType Name="cus">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customerName" Type="varchar" MaxLength="100" />
+    <Property Name="customerEmail" Type="varchar" MaxLength="100" />
+    <Property Name="customerPhone" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="shp">
+    <Key>
+      <PropertyRef Name="shipmentId" />
+    </Key>
+    <Property Name="shipmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shipModel" Type="varchar" MaxLength="50" />
+    <Property Name="shipmentCode" Type="varchar" MaxLength="50" />
+    <Property Name="shipContainer" Type="int" />
+    <Property Name="shipmentStatus" Type="varchar" MaxLength="50" />
+    <Property Name="shipmentStartDate" Type="datetime" Nullable="false" />
+    <Property Name="shipmentEndDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="usr">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="userPassword" Type="varchar" MaxLength="50" />
+    <Property Name="userType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_agn_usr">
+    <End Role="usr" Type="Self.usr" Multiplicity="0..1" />
+    <End Role="agn" Type="Self.agn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usr">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="agn">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bkg_agn">
+    <End Role="agn" Type="Self.agn" Multiplicity="0..1" />
+    <End Role="bkg" Type="Self.bkg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agn">
+        <PropertyRef Name="agentId" />
+      </Principal>
+      <Dependent Role="bkg">
+        <PropertyRef Name="agnId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bkg_cus">
+    <End Role="cus" Type="Self.cus" Multiplicity="0..1" />
+    <End Role="bkg" Type="Self.bkg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cus">
+        <PropertyRef Name="customerId" />
+      </Principal>
+      <Dependent Role="bkg">
+        <PropertyRef Name="custId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bkg_shp">
+    <End Role="shp" Type="Self.shp" Multiplicity="0..1" />
+    <End Role="bkg" Type="Self.bkg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="shp">
+        <PropertyRef Name="shipmentId" />
+      </Principal>
+      <Dependent Role="bkg">
+        <PropertyRef Name="shipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CMSModelStoreContainer">
+    <EntitySet Name="agn" EntityType="Self.agn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bkg" EntityType="Self.bkg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cus" EntityType="Self.cus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="shp" EntityType="Self.shp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usr" EntityType="Self.usr" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_agn_usr" Association="Self.FK_agn_usr">
+      <End Role="usr" EntitySet="usr" />
+      <End Role="agn" EntitySet="agn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bkg_agn" Association="Self.FK_bkg_agn">
+      <End Role="agn" EntitySet="agn" />
+      <End Role="bkg" EntitySet="bkg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bkg_cus" Association="Self.FK_bkg_cus">
+      <End Role="cus" EntitySet="cus" />
+      <End Role="bkg" EntitySet="bkg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bkg_shp" Association="Self.FK_bkg_shp">
+      <End Role="shp" EntitySet="shp" />
+      <End Role="bkg" EntitySet="bkg" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

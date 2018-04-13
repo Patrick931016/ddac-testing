@@ -1,0 +1,42 @@
+﻿@model ContainerManagementSystem.Models.usr
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2><b>User</b></h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.userId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

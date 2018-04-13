@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CMSEntities1-Web.config Connection String" description="CMSEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Modelling.csdl|res://*/Models.Modelling.ssdl|res://*/Models.Modelling.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-EO18V0T;initial catalog=CMS;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Patrick\\Desktop\\CMS\\ContainerManagementSystem\\ContainerManagementSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CMSEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="CMSEntities-Web.config Connection String" description="CMSEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Modelling.csdl|res://*/Models.Modelling.ssdl|res://*/Models.Modelling.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-EO18V0T;initial catalog=CMS;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Patrick\\Desktop\\CMS\\ContainerManagementSystem\\ContainerManagementSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CMSEntities']/@connectionString" />
+  </parameter>
+</parameters>

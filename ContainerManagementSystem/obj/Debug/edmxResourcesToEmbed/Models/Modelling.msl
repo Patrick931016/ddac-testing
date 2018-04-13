@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMSModelStoreContainer" CdmEntityContainer="CMSEntities">
+    <EntitySetMapping Name="agns">
+      <EntityTypeMapping TypeName="CMSModel.agn">
+        <MappingFragment StoreEntitySet="agn">
+          <ScalarProperty Name="agentId" ColumnName="agentId" />
+          <ScalarProperty Name="agentName" ColumnName="agentName" />
+          <ScalarProperty Name="agentAge" ColumnName="agentAge" />
+          <ScalarProperty Name="agentDOB" ColumnName="agentDOB" />
+          <ScalarProperty Name="agentPhone" ColumnName="agentPhone" />
+          <ScalarProperty Name="agentEmail" ColumnName="agentEmail" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bkgs">
+      <EntityTypeMapping TypeName="CMSModel.bkg">
+        <MappingFragment StoreEntitySet="bkg">
+          <ScalarProperty Name="bookingId" ColumnName="bookingId" />
+          <ScalarProperty Name="custId" ColumnName="custId" />
+          <ScalarProperty Name="shipId" ColumnName="shipId" />
+          <ScalarProperty Name="agnId" ColumnName="agnId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cus">
+      <EntityTypeMapping TypeName="CMSModel.cu">
+        <MappingFragment StoreEntitySet="cus">
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="customerName" ColumnName="customerName" />
+          <ScalarProperty Name="customerEmail" ColumnName="customerEmail" />
+          <ScalarProperty Name="customerPhone" ColumnName="customerPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shps">
+      <EntityTypeMapping TypeName="CMSModel.shp">
+        <MappingFragment StoreEntitySet="shp">
+          <ScalarProperty Name="shipmentId" ColumnName="shipmentId" />
+          <ScalarProperty Name="shipModel" ColumnName="shipModel" />
+          <ScalarProperty Name="shipmentCode" ColumnName="shipmentCode" />
+          <ScalarProperty Name="shipContainer" ColumnName="shipContainer" />
+          <ScalarProperty Name="shipmentStatus" ColumnName="shipmentStatus" />
+          <ScalarProperty Name="shipmentStartDate" ColumnName="shipmentStartDate" />
+          <ScalarProperty Name="shipmentEndDate" ColumnName="shipmentEndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usrs">
+      <EntityTypeMapping TypeName="CMSModel.usr">
+        <MappingFragment StoreEntitySet="usr">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

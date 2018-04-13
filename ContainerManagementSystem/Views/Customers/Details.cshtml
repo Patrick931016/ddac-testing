@@ -1,0 +1,42 @@
+﻿@model ContainerManagementSystem.Models.cu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2><b>Customer</b></h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerPhone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.customerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

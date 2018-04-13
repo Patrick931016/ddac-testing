@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ContainerManagementSystem.Models.shp>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Maersk Line</h1>
+    <p class="lead">Maersk Line is the global container division and the largest operating unit of the A.P. Moller – Maersk Group, a Danish business conglomerate. It is the world's largest container shipping company having customers through 374 offices in 116 countries.</p>
+</div>
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    //the following are search options
+    @Html.TextBox("search") <input type="submit" name="submit" value="Search" />
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.shipModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentEndDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentEndDate)
+            </td>
+        </tr>
+    }
+
+</table>

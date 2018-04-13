@@ -1,0 +1,72 @@
+﻿@model ContainerManagementSystem.Models.shp
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h2><b>Shipment</b></h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.shipModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shipModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shipmentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shipmentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shipContainer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shipContainer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shipmentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shipmentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shipmentStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shipmentStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shipmentEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shipmentEndDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+       
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

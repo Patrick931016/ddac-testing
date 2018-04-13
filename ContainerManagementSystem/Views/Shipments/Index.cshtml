@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ContainerManagementSystem.Models.shp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Search", "Shipments", FormMethod.Get))
+{
+    //the following are search options
+    @Html.TextBox("search") <input type="submit" name="submit" value="Search" />
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.shipModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipContainer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shipmentEndDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipContainer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipmentEndDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.shipmentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.shipmentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.shipmentId })
+            </td>
+        </tr>
+    }
+
+</table>

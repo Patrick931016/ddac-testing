@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ContainerManagementSystem.Models.usr>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Search", "users", FormMethod.Get))
+{
+    //the following are search options
+    @Html.TextBox("search") <input type="submit" name="submit" value="Search"/>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userType)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userType)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.userId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.userId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.userId })
+                </td>
+            </tr>
+        }
+
+    </table>

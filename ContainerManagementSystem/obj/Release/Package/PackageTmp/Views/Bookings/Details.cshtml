@@ -1,0 +1,42 @@
+﻿@model ContainerManagementSystem.Models.bkg
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2><b>Booking</b></h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.agn.agentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agn.agentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cu.customerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cu.customerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shp.shipModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shp.shipModel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bookingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
